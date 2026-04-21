@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Mangalmay Clean & Airy Theme */
+  --color-brand-red: #C0272D;
+  --color-soft-pink: #FDEEF2;
+  --color-blush-pink: #FFD6E0;
+  --color-dusty-rose: #E8A0B0;
+  --color-near-black: #1A1A1A;
+  --color-medium-gray: #555555;
+  --color-off-white: #FAFAFA;
+  --color-section-gray: #F7F7F7;
+  --color-divider: #EEEEEE;
+
+  /* Fonts */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-near-black bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-near-black font-bold leading-tight;
+  }
+  p {
+    @apply text-medium-gray leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center rounded-full justify-center px-4 py-2 bg-transparent text-pink-400 font-medium tracking-wide uppercase transition-all duration-300 
+    hover:scale-95 border border-pink-400 hover:bg-pink-400 hover:text-white;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center rounded-full justify-center px-4 py-2 bg-transparent text-pink-400 font-medium tracking-wide uppercase transition-all duration-300 
+    hover:scale-95 border border-pink-400 hover:bg-pink-400 hover:text-white;
+  }
+  .btn-link-underline {
+    @apply font-bold tracking-[0.15em] text-[0.7rem] text-black border-b border-black pb-1 hover:text-pink-400 hover:border-pink-400 uppercase transition-all;
+  }
+
+  /* Nav Links */
+  .nav-link-spaced {
+    @apply font-semibold text-[0.7rem] tracking-[0.15em] text-pink-400 hover:text-pink-400 transition-all uppercase no-underline;
+  }
+
+  /* Section Styles */
+  .section-padding {
+    @apply py-24;
+  }
+  .section-heading-centered {
+    @apply text-center mb-16;
+  }
+  .section-subtitle {
+    @apply text-medium-gray font-medium tracking-wide; 
+  }
+
+  /* Product Card Elements */
+  .price-badge-charcoal {
+    @apply absolute bottom-6 left-6 bg-[#222222] text-white px-4 py-1.5 text-xs font-bold shadow-md;
+  }
+  button, a {
+    cursor: pointer;
+  }
+}
