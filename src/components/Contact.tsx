@@ -25,8 +25,8 @@ const Contact: React.FC = () => {
 
             <div className="space-y-12">
               {[
-                { icon: <FaMapMarkerAlt />, title: 'Our Office', content: 'Madhapar, Rajkot - 360006, Gujarat' },
-                { icon: <FaPhoneAlt />, title: 'Call Center', content: '+91 99049 57696' },
+                { icon: <FaMapMarkerAlt />, title: 'Our Office', content: 'Plot 46/1, Raghuvir Industrial Area, Opp. Gandhi Society, Jamnagar Road, Rajkot, Gujarat - 360006' },
+                { icon: <FaPhoneAlt />, title: 'Call Center', content: '+91 99049 57696 / +91 98794 57696' },
                 { icon: <FaEnvelope />, title: 'Email Address', content: 'mangalmayfragrances@gmail.com' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-8 group">
