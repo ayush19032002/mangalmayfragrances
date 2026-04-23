@@ -12,6 +12,7 @@
   --color-off-white: #FAFAFA;
   --color-section-gray: #F7F7F7;
   --color-divider: #EEEEEE;
+  --color-luxury-bg: #F9F6F1;
 
   /* Fonts */
   --font-heading: "Playfair Display", serif;
@@ -50,6 +51,19 @@
   /* Nav Links */
   .nav-link-spaced {
     @apply font-semibold text-[0.7rem] tracking-[0.15em] text-pink-400 hover:text-pink-400 transition-all uppercase no-underline;
+  }
+
+  .subtitle-premium {
+    @apply text-pink-400 uppercase tracking-[0.45em] text-[0.65rem] font-bold block mb-4;
+    letter-spacing: 0.35em;
+  }
+
+  .text-text-body {
+    color: var(--color-medium-gray);
+  }
+
+  .bg-luxury-bg {
+    background-color: var(--color-luxury-bg);
   }
 
   /* Section Styles */
