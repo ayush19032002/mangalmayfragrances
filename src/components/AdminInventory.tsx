@@ -4,7 +4,8 @@ import type { Product, Category } from '../contexts/AdminContext';
 import { FiEdit2, FiTrash2, FiPlus, FiX, FiChevronDown, FiChevronUp, FiDownload } from 'react-icons/fi';
 
 // Seed data - all categories and products
-const SEED_CATEGORIES: Omit<Category, 'id'>[] = [
+type CategoryWithImage = Omit<Category, 'id'> & { image?: string };
+const SEED_CATEGORIES: CategoryWithImage[] = [
   { name: 'ZIPPER PACKS',          description: 'Premium zipper-sealed incense packs',          image: '/product1.png' },
   { name: 'DHOOP STICKS',          description: 'Traditional thick dhoop sticks',               image: '/lavender.png' },
   { name: 'INCENSE STICKS JARS',   description: 'Luxury glass jars with incense sticks',        image: '/product2.png' },

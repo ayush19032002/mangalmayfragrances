@@ -16,7 +16,7 @@ const CategoryManager: React.FC = () => {
 
   const handleOpenModal = (category?: Category) => {
     if (category) {
-      setFormData({ name: category.name, description: category.description, image: category.image });
+      setFormData({ name: category.name, description: category.description, image: (category as any).image || '' });
       setEditingId(category.id);
     } else {
       resetForm();

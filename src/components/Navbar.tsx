@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
-import { MdAdminPanelSettings } from 'react-icons/md';
+// import { MdAdminPanelSettings } from 'react-icons/md';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {

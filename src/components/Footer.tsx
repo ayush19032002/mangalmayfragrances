@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaWhatsapp, FaTwitter, FaArrowUp  } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaArrowUp  } from 'react-icons/fa';
 
 
 const Footer: React.FC = () => {
