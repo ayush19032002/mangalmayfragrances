@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 
+
 export interface Category {
   id: string;
   name: string;
   description: string;
+  image?: string;
 }
 
 export interface Product {

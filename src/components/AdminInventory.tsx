@@ -123,7 +123,7 @@ const AdminInventory: React.FC = () => {
       setCategoryForm({
         name: category.name,
         description: category.description,
-        image: category.image,
+        image: category.image || '',
       });
       setEditingState({ type: 'categories', id: category.id });
     } else {
