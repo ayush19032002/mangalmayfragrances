@@ -7,9 +7,9 @@ import Home from './pages/Home';
 import ProductsPage from './pages/ProductsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
-import { AdminProvider, useAdmin } from './contexts/AdminContext';
+// import AdminLogin from './pages/AdminLogin';
+// import AdminDashboard from './pages/AdminDashboard';
+import { AdminProvider /*, useAdmin */ } from './contexts/AdminContext';
 
 
 // Scroll to top on route change
@@ -22,10 +22,10 @@ const ScrollToTop = () => {
 };
 
 // Protected Route Component
-const ProtectedAdminRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
-  const { isLoggedIn } = useAdmin();
-  return isLoggedIn ? <>{element}</> : <Navigate to="/admin/login" replace />;
-};
+// const ProtectedAdminRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
+//   const { isLoggedIn } = useAdmin();
+//   return isLoggedIn ? <>{element}</> : <Navigate to="/admin/login" replace />;
+// };
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -55,8 +55,8 @@ const App: React.FC = () => {
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route path="/admin/dashboard" element={<ProtectedAdminRoute element={<AdminDashboard />} />} />
+              {/* <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<ProtectedAdminRoute element={<AdminDashboard />} />} /> */}
             </Routes>
           </main>
           <Footer />

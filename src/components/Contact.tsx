@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
-  const handleWA = () => {
-    window.open('https://wa.me/919904957696', '_blank');
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleWA = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Using %0A explicitly to ensure WhatsApp recognizes the line breaks
+    const text = `Name: ${formData.name}%0AMobile: ${formData.phone}%0AMessage: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/919904957696?text=${text}`;
+
+    window.open(whatsappUrl, '_blank');
   };
 
-  return ( 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
     <section className="py-24 bg-section-gray relative">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
@@ -25,8 +44,8 @@ const Contact: React.FC = () => {
 
             <div className="space-y-12">
               {[
-                { icon: <FaMapMarkerAlt />, title: 'Our Office', content: 'Plot 46/1, Raghuvir Industrial Area, Opp. Gandhi Society, Jamnagar Road, Rajkot, Gujarat - 360006' },
-                { icon: <FaPhoneAlt />, title: 'Call Center', content: '+91 99049 57696 / +91 98794 57696' },
+                { icon: <FaMapMarkerAlt />, title: 'Our Office', content: <>Mangalmay Fragrances (OPC) Pvt. Ltd.<br />Plot 46/1, Raghuvir Industrial Area, Opp. Gandhi Society, Jamnagar Road, Rajkot, Gujarat - 360006</> },
+                { icon: <FaPhoneAlt />, title: 'Call Center', content: '99049 57696 / 98794 57696' },
                 { icon: <FaEnvelope />, title: 'Email Address', content: 'mangalmayfragrances@gmail.com' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-8 group">
@@ -50,11 +69,14 @@ const Contact: React.FC = () => {
           >
             <h3 className="text-[clamp(2.2rem,4vw,3.2rem)] font-normal text-near-black leading-tight mb-3"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Inquiry Form</h3>
-            <form onSubmit={(e) => { e.preventDefault(); handleWA(); }} className="space-y-8 relative z-10">
+            <form onSubmit={handleWA} className="space-y-8 relative z-10">
               <div className="space-y-3">
                 <label className="block text-xs text-medium-gray uppercase tracking-wider font-bold">Full Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name"
                   className="w-full p-4 bg-section-gray border border-divider rounded-2xl focus:outline-none focus:border-pink-400 transition-all text-sm "
                   required
@@ -64,6 +86,9 @@ const Contact: React.FC = () => {
                 <label className="block text-xs text-medium-gray uppercase tracking-wider font-bold">Mobile Number</label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="+91 00000 00000"
                   className="w-full p-4 bg-section-gray border border-divider rounded-2xl focus:outline-none focus:border-pink-400 transition-all text-sm"
                   required
@@ -72,6 +97,9 @@ const Contact: React.FC = () => {
               <div className="space-y-3">
                 <label className="block text-xs text-medium-gray uppercase tracking-wider font-bold">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your requirements..."
                   className="w-full p-4 bg-section-gray border border-divider rounded-2xl focus:outline-none focus:border-pink-400 transition-all text-sm"
@@ -79,13 +107,13 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              {/* WhatsApp Redirection Button - FIXED ALIGNMENT */}
+              {/* WhatsApp Redirection Button */}
               <button
                 type="submit"
                 className="btn-primary w-full flex items-center justify-center gap-4 py-3 mt-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <FaWhatsapp className="text-2xl" />
-                <span className="tracking-widest">CONNECT ON WHATSAPP</span>
+                <span className="tracking-widest">SEND MESSAGE TO WHATSAPP</span>
               </button>
             </form>
           </motion.div>

@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
           <h1 className="text-[clamp(2.2rem,4vw,3.2rem)] font-normal text-near-black leading-tight mb-3"
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>The Story of Mangalmay</h1>
           <p className="text-medium-gray max-w-2xl mx-auto text-lg font-medium leading-relaxed">
-            Crafting the bridge between ancient spiritual wisdom and modern minimalist sanctuary since 2008.
+            Crafting the bridge between ancient spiritual wisdom and modern minimalist sanctuary since 2023.
           </p>
         </motion.div>
       </div>

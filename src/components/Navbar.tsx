@@ -19,8 +19,8 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About', path: '/about' },
+    { name: 'Product', path: '/products' },
     { name: 'Contact Us', path: '/contact' }
   ];
 
@@ -54,13 +54,13 @@ const Navbar: React.FC = () => {
             <a href="https://wa.me/919904957696" target="_blank" className="hidden sm:flex items-center gap-2 text-pink-400 font-bold text-sm tracking-widest uppercase border border-pink-400 px-4 py-2 rounded-full hover:bg-pink-400 hover:text-white transition-all">
                <FaWhatsapp size={20}/> Inquiry
             </a>
-            <button
+            {/* <button
               onClick={() => navigate('/admin/login')}
               className="hidden sm:flex items-center text-2xl text-gray-600 hover:text-pink-400 transition-colors p-2 hover:bg-gray-100 rounded-lg"
               title="Admin Panel"
             >
               <MdAdminPanelSettings size={24} />
-            </button>
+            </button> */}
             <button 
               className="lg:hidden text-3xl text-pink-400 z-[1100] transition-transform hover:scale-110"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
 
            <div className={`mt-auto transition-all duration-700 delay-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="border-t border-divider pt-10 flex flex-col gap-6">
-                 <div>
+                 {/* <div>
                     <Link
                       to="/admin/login"
                       onClick={() => setIsMenuOpen(false)}
@@ -103,16 +103,19 @@ const Navbar: React.FC = () => {
                     >
                       <MdAdminPanelSettings size={24} /> Admin Panel
                     </Link>
-                 </div>
+                 </div> */}
                  <div>
                     <span className="text-medium-gray text-[0.6rem] font-bold tracking-widest uppercase mb-4 block">Connect with us</span>
                     <div className="flex gap-6 text-2xl text-near-black">
-                       <FaInstagram />
-                       <FaFacebookF />
-                       <FaWhatsapp />
+                       <a href="https://www.instagram.com/mangalmay_fragrances?utm_source=qr&igsh=bGh0YTRpdHhpd2Ny" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors"><FaInstagram /></a>
+                       <a href="https://www.facebook.com/share/1H2gizERxo/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors"><FaFacebookF /></a>
+                       <a href="https://wa.me/919904957696" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors"><FaWhatsapp /></a>
                     </div>
                  </div>
-                 <p className="text-medium-gray text-xs font-medium max-w-[200px]">Madhapar, Rajkot - 360006 Gujarat, India</p>
+                 <p className="text-medium-gray text-xs font-medium">
+                    Plot 46/1, Raghuvir Ind. Area,<br />
+                    Jamnagar Road, Rajkot - 360006
+                 </p>
               </div>
            </div>
         </div>

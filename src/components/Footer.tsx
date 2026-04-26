@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About', path: '/about' },
+    { name: 'Product', path: '/products' },
     { name: 'Contact Us', path: '/contact' }
   ];
 
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                <img src="/logo-bg.png" alt="Mangalmay Logo" className="w-32 h-auto object-contain" />
             </Link>
             <p className="text-medium-gray leading-relaxed max-w-sm font-body font-normal text-sm">
-              Bringing spirituality into your life and home since 2008. Crafted with traditional wisdom and modern minimalism.
+              Bringing spirituality into your life and home since 2023. Crafted with traditional wisdom and modern minimalism.
             </p>
           </div>
           
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
               {/* Instagram */}
               <div className="relative group">
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/mangalmay_fragrances?utm_source=qr&igsh=bGh0YTRpdHhpd2Ny" 
                   target="_blank"
                   className="w-12 h-12 rounded-full border border-pink-400 flex items-center justify-center text-xl text-pink-400 transition-all duration-300 hover:bg-gradient-to-tr hover:from-pink-500 hover:via-red-500 hover:to-yellow-500 hover:text-white hover:border-transparent"
                 >
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
               {/* Facebook */}
               <div className="relative group">
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com/share/1H2gizERxo/" 
                   target="_blank"
                   className="w-12 h-12 rounded-full border border-blue-400 flex items-center justify-center text-xl text-blue-400 transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:border-transparent"
                 >
@@ -108,24 +108,15 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               
-              {/* Twitter */}
-              <div className="relative group">
-                <a 
-                  href="#" 
-                  target="_blank"
-                  className="w-12 h-12 rounded-full border border-blue-400 flex items-center justify-center text-xl text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:text-white hover:border-transparent"
-                >
-                  <FaTwitter />
-                </a>
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-                  Twitter (X)
-                </span>
-              </div>
+
 
             </div>
 
             <p className="text-black text-sm font-semibold uppercase tracking-wide leading-relaxed">
-              Madhapar, Rajkot-360006<br />Gujarat, India
+              Mangalmay Fragrances (OPC) Pvt. Ltd.<br />
+              Plot 46/1, Raghuvir Industrial Area,
+              Opp. Gandhi Society, Jamnagar Road,
+              Rajkot, Gujarat - 360006
             </p>
           </div>
         </div>

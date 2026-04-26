@@ -1,21 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useAdmin } from '../contexts/AdminContext';
-import { FiEdit2, FiTrash2 } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { PRODUCTS, CATEGORIES } from '../data/inventory';
 
 const TopSelling: React.FC = () => {
-  const { products, categories, isLoggedIn, deleteProduct } = useAdmin();
-  const navigate = useNavigate();
-
   // Get featured products or just the first 4 if none marked featured
-  const featuredProducts = products.filter(p => p.featured).slice(0, 4);
-  const displayProducts = featuredProducts.length > 0 ? featuredProducts : products.slice(0, 4);
+  const featuredProducts = PRODUCTS.filter(p => p.featured).slice(0, 4);
+  const displayProducts = featuredProducts.length > 0 ? featuredProducts : PRODUCTS.slice(0, 4);
 
-  const getCategoryName = (id: string) => categories.find(c => c.id === id)?.name || 'Unknown';
+  const getCategoryName = (id: string) => CATEGORIES.find(c => c.id === id)?.name || 'Unknown';
 
-  const handleInquiry = (productName: string) => {
-    alert(`Inquiry for ${productName}`);
+  const handleInquiry = () => {
+    window.open('https://wa.me/919904957696', '_blank');
   };
 
   return (
@@ -62,30 +57,11 @@ const TopSelling: React.FC = () => {
               viewport={{ once: true }}
               className="group relative bg-white border border-[#eee4d7] rounded-[28px] overflow-hidden shadow-md hover:shadow-xl transition duration-500"
             >
-              {/* Admin Actions */}
-              {isLoggedIn && (
-                <div className="absolute top-3 right-3 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button
-                    onClick={() => navigate('/products')} // Navigate to products page where full edit controls are
-                    className="bg-blue-600 text-white p-2 rounded-lg"
-                    title="Edit in full catalog"
-                  >
-                    <FiEdit2 size={16} />
-                  </button>
-                  <button
-                    onClick={() => { if(window.confirm(`Delete ${product.name}?`)) deleteProduct(product.id); }}
-                    className="bg-red-600 text-white p-2 rounded-lg"
-                  >
-                    <FiTrash2 size={16} />
-                  </button>
-                </div>
-              )}
-
-              <div className="bg-[#faf6ef] p-6 flex justify-center items-center min-h-[260px]">
+              <div className="bg-[#faf6ef] aspect-[3/4] flex justify-center items-center overflow-hidden border-b border-[#eee4d7]">
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="max-w-[200px] transition group-hover:scale-110" 
+                  className="w-full h-full object-contain p-4 transition group-hover:scale-110" 
                   onError={e => { (e.target as HTMLImageElement).src = '/product1.png'; }}
                 />
               </div>
@@ -102,10 +78,10 @@ const TopSelling: React.FC = () => {
                       {product.price === 0 ? 'Contact' : `₹${product.price}`}
                     </p>
                   </div>
-                                  </div>
+                </div>
 
                 <button
-                  onClick={() => handleInquiry(product.name)}
+                  onClick={handleInquiry}
                   className="mt-5 w-full py-2.5 rounded-full bg-transparent border border-[#8b6f47] text-[#8b6f47] hover:bg-[#8b6f47] hover:text-white transition-all duration-300 font-semibold"
                 >
                   Inquiry Now →

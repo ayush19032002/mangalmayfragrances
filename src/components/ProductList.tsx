@@ -1,94 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAdmin } from '../contexts/AdminContext';
-import type { Product, Category } from '../contexts/AdminContext';
-
-// ─── Static seed data ────────────────────────────────────────────────────────
-const SEED_CATEGORIES: Omit<Category, 'id'>[] = [
-  { name: 'ZIPPER PACKS',          description: 'Premium zipper-sealed incense packs',          image: '/product1.png' },
-  { name: 'DHOOP STICKS',          description: 'Traditional thick dhoop sticks',               image: '/lavender.png' },
-  { name: 'INCENSE STICKS JARS',   description: 'Luxury glass jars with incense sticks',        image: '/product2.png' },
-  { name: 'LOOSE INCENSE STICKS',  description: 'Wholesale loose incense sticks',               image: '/rose.png'     },
-];
-
-const SEED_PRODUCTS: Omit<Product, 'id'>[] = [
-  { name: 'Sandalwood',               description: 'Fragrance of Real Sandal',                                categoryId: '__zip__', price: 80,  image: '/product1.png', featured: true  },
-  { name: 'Exotica Heaven',           description: 'Perfumed Incense Sticks',                                 categoryId: '__zip__', price: 80,  image: '/product2.png', featured: false },
-  { name: 'Keshar Essence',           description: 'Fragrance of Real Saffron Threads',                       categoryId: '__zip__', price: 80,  image: '/rose.png',     featured: false },
-  { name: 'Flower Bucket (4 in 1)',   description: 'Rose • Lavender • Mogra • Ratrani',                       categoryId: '__zip__', price: 80,  image: '/hero.png',     featured: true  },
-  { name: 'Imperial Collection (4 in 1)', description: 'Heritage • Magnet • Velvet Touch • Fantasia',         categoryId: '__zip__', price: 80,  image: '/product1.png', featured: false },
-  { name: 'Perfume Harmony (5 in 1)', description: 'Magic World • Blue Sea • Coolant • Celebration • Feelings', categoryId: '__zip__', price: 80, image: '/product2.png', featured: false },
-  { name: 'Prathna',                  description: 'A Perfumed Devotional Fragrance',                         categoryId: '__zip__', price: 80,  image: '/rose.png',     featured: false },
-  { name: 'Gugal',                    description: 'A Scented Fragrance of Gugal',                            categoryId: '__zip__', price: 80,  image: '/hero.png',     featured: false },
-  { name: 'Exotica Heaven',           description: 'Premium Dhoop Stick',                                     categoryId: '__dho__', price: 80,  image: '/lavender.png', featured: false },
-  { name: 'Kesar Chandan',            description: 'Traditional Wood Scent',                                  categoryId: '__dho__', price: 80,  image: '/product1.png', featured: false },
-  { name: 'Guggal',                   description: 'Natural Purification',                                    categoryId: '__dho__', price: 80,  image: '/product2.png', featured: false },
-  { name: 'Sandal Wood',              description: 'Pure Sandal Extract',                                     categoryId: '__dho__', price: 80,  image: '/rose.png',     featured: false },
-  { name: 'Kasturi',                  description: 'Exotic Musk Aroma',                                      categoryId: '__dho__', price: 80,  image: '/hero.png',     featured: false },
-  { name: 'Rose',                     description: 'Classic Floral Calm',                                    categoryId: '__dho__', price: 80,  image: '/lavender.png', featured: false },
-  { name: 'Incense Sticks Jars',      description: 'Bulk Luxury Jar',                                         categoryId: '__jar__', price: 140, image: '/product1.png', featured: false },
-  { name: 'Loose Incense Sticks',     description: 'Wholesale Packs Available',                               categoryId: '__los__', price: 0,   image: '/hero.png',     featured: false },
-];
+import { PRODUCTS, CATEGORIES } from '../data/inventory';
 
 const ProductList: React.FC = () => {
-  const { categories, products } = useAdmin();
-
-  const [seeded, setSeeded] = useState(false);
-
-  // Seed default products once if products list is empty (regardless of categories)
-  useEffect(() => {
-    if (seeded) return;
-    if (products.length === 0) {
-      const now = Date.now();
-
-      // Use existing categories if available, otherwise create defaults
-      let catData: Category[];
-      if (categories.length > 0) {
-        catData = categories;
-      } else {
-        catData = SEED_CATEGORIES.map((c, i) => ({ ...c, id: String(now + i) }));
-        localStorage.setItem('agarbatti_categories', JSON.stringify(catData));
-      }
-
-      // Map slot keys to real category IDs by name match, falling back to index
-      const slotNames: Record<string, string[]> = {
-        '__zip__': ['ZIPPER', 'ZIP'],
-        '__dho__': ['DHOOP'],
-        '__jar__': ['JAR', 'INCENSE STICKS JAR'],
-        '__los__': ['LOOSE'],
-      };
-      const resolveSlot = (slot: string, fallbackIndex: number): string => {
-        const keywords = slotNames[slot] || [];
-        for (const kw of keywords) {
-          const match = catData.find(c => c.name.toUpperCase().includes(kw));
-          if (match) return match.id;
-        }
-        return (catData[fallbackIndex] || catData[0]).id;
-      };
-
-      const finalProducts: Product[] = SEED_PRODUCTS.map((p, i) => ({
-        ...p,
-        id: String(now + 100 + i),
-        categoryId: resolveSlot(p.categoryId, 0),
-      }));
-
-      localStorage.setItem('agarbatti_products', JSON.stringify(finalProducts));
-      window.location.reload();
-    }
-    setSeeded(true);
-  }, [categories, products]);
-
   // ── Tab state ──────────────────────────────────────────────────────────────
   const allTab = 'ALL';
-  const tabs = [allTab, ...categories.map(c => c.name)];
+  const tabs = [allTab, ...CATEGORIES.map(c => c.name)];
   const [activeTab, setActiveTab] = useState(allTab);
 
-  
-  const getCategoryName = (id: string) => categories.find(c => c.id === id)?.name || 'Unknown';
+  const getCategoryName = (id: string) => CATEGORIES.find(c => c.id === id)?.name || 'Unknown';
 
   const filtered = activeTab === allTab
-    ? products
-    : products.filter(p => getCategoryName(p.categoryId) === activeTab);
+    ? PRODUCTS
+    : PRODUCTS.filter(p => getCategoryName(p.categoryId) === activeTab);
 
   return (
     <section className="relative mt-10 py-24 bg-gradient-to-b from-[#fffdf8] via-white to-[#f9f6f1] overflow-hidden">
@@ -98,7 +22,6 @@ const ProductList: React.FC = () => {
 
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
 
-        
         {/* ── Category tabs ──────────────────────────────────────────────────── */}
         <div className="flex flex-wrap justify-center gap-3 mb-14">
           {tabs.map(tab => (
@@ -131,11 +54,11 @@ const ProductList: React.FC = () => {
               >
                 
                 {/* Image */}
-                <div className="bg-[#faf6ef] p-6 flex justify-center items-center min-h-[260px]">
+                <div className="bg-[#faf6ef] aspect-[3/4] flex justify-center items-center overflow-hidden border-b border-[#eee4d7]">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="max-w-[200px] transition duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain p-4 transition duration-500 group-hover:scale-110"
                     onError={e => { (e.target as HTMLImageElement).src = '/product1.png'; }}
                   />
                 </div>
@@ -153,13 +76,16 @@ const ProductList: React.FC = () => {
                         {product.price === 0 ? 'Contact' : `₹${product.price}`}
                       </p>
                     </div>
-                                      </div>
+                  </div>
 
-                  <button
-                    className="mt-5 w-[65%] py-2.5 rounded-full bg-transparent border border-[#8b6f47] text-[#8b6f47] hover:bg-[#8b6f47] hover:text-white transition-all duration-300"
+                  <a
+                    href="https://wa.me/919904957696"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-block w-[65%] py-2.5 rounded-full bg-transparent border border-[#8b6f47] text-[#8b6f47] hover:bg-[#8b6f47] hover:text-white transition-all duration-300 text-center no-underline text-sm font-semibold"
                   >
                     Inquiry Now →
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -173,7 +99,7 @@ const ProductList: React.FC = () => {
         )}
       </div>
 
-          </section>
+    </section>
   );
 };
 

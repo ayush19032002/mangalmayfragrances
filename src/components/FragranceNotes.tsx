@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const FragranceNotes: React.FC = () => {
   const notes = [
     {
-      name: 'Mysore Sandalwood',
+      name: 'Sandalwood',
       character: 'Sacred & Woody',
       desc: 'A deep, cream-like woodiness that grounds the spirit and purifies the atmosphere.',
       experience: 'Temple-like tranquility',
@@ -12,7 +12,7 @@ const FragranceNotes: React.FC = () => {
       color: '#FDF5EE'
     },
     {
-      name: 'Kannauj Rose',
+      name: 'Rose',
       character: 'Sweet & Ethereal',
       desc: 'The fresh, dew-kissed scent of 100 petals, bringing a heart-opening sense of joy.',
       experience: 'Morning garden bliss',
