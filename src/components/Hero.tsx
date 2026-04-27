@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 // Import Swiper styles
 // @ts-expect-error - CSS module import
@@ -10,6 +11,8 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+
   const slides = [
     {
       title: 'Start your day with a divine experience',
@@ -62,7 +65,7 @@ const Hero: React.FC = () => {
 
                 <div className="max-w-[1400px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10 py-12 lg:py-0">
                   {/* Content Side */}
-                  <div className="p-2 w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center text-center lg:text-left h-full order-2 lg:order-1 mt-12 lg:mt-0">
+                  <div className="p-2 w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center text-center lg:text-left h-full order-2 lg:order-1 mt-12 lg:mt-0 relative z-30">
                     <AnimatePresence mode="wait">
                       {isActive && (
                         <motion.div
@@ -70,6 +73,7 @@ const Hero: React.FC = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
                           transition={{ duration: 0.8, delay: 0.2 }}
+                          className="pointer-events-auto"
                         >
                           <h1
                             className="text-4xl md:text-5xl text-[clamp(2.2rem,4vw,3.2rem)] font-normal text-near-black leading-tight mb-3"
@@ -82,9 +86,9 @@ const Hero: React.FC = () => {
                             {slide.desc}
                           </p>
 
-                          <div className="flex flex-row justify-center lg:justify-start gap-4">
-                            <button className="btn-primary">SHOP NOW</button>
-                            <button className="btn-secondary">CONTACT US</button>
+                          <div className="flex flex-row justify-center lg:justify-start gap-4 pointer-events-auto">
+                            <button onClick={() => navigate('/products')} className="btn-primary cursor-pointer">SHOP NOW</button>
+                            <button onClick={() => navigate('/contact')} className="btn-secondary cursor-pointer">CONTACT US</button>
                           </div>
                         </motion.div>
                       )}
