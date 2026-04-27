@@ -37,7 +37,7 @@ const About: React.FC = () => {
                   <img src="/download.jpg" className="w-full h-full object-cover" alt="Collage Item" />
                 </div>
                 <div className="aspect-[3/4] bg-section-gray rounded-[40px] overflow-hidden shadow-lg border-8 border-white">
-                  <img src="/rose.png" className="h-full w-full object-cover" alt="Collage Item" />
+                  <img src="/download2.jpg" className="h-full w-full object-cover" alt="Collage Item" />
                 </div>
               </div>
               <div className="space-y-6">

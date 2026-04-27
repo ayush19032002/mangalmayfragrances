@@ -37,7 +37,7 @@ const ProductBannerSplit: React.FC = () => {
             </div>
             <div className="relative mt-12 mb-6">
               <div className="absolute inset-0 bg-brand-red/5 rounded-full blur-3xl scale-125" />
-              <img src="/rose.png" className="w-40 lg:w-48 h-auto relative z-10 hover:drop-shadow-xl transition-all duration-300" alt="Kanha Dry Dhoop" />
+              <img src="/new product.jpeg" className="w-40 lg:w-48 h-auto relative z-10 hover:drop-shadow-xl transition-all duration-300" alt="New Product" />
             </div>
           </motion.div>
 

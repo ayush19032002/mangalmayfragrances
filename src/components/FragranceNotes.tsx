@@ -8,7 +8,7 @@ const FragranceNotes: React.FC = () => {
       character: 'Sacred & Woody',
       desc: 'A deep, cream-like woodiness that grounds the spirit and purifies the atmosphere.',
       experience: 'Temple-like tranquility',
-      image: '/product1.png',
+      image: '/product image/200 Grams Agarbatti Jar/jar16.jpeg',
       color: '#FDF5EE'
     },
     {
@@ -16,15 +16,15 @@ const FragranceNotes: React.FC = () => {
       character: 'Sweet & Ethereal',
       desc: 'The fresh, dew-kissed scent of 100 petals, bringing a heart-opening sense of joy.',
       experience: 'Morning garden bliss',
-      image: '/rose.png',
+      image: '/product image/200 Grams Agarbatti Jar/jar26.jpeg',
       color: '#FDEEF2'
     },
     {
-      name: 'French Lavender',
+      name: 'Lavender',
       character: 'Calm & Herbaceous',
       desc: 'Gently soothing blossoms that melt away mental clutter and invite deep, peaceful rest.',
       experience: 'Soothing twilight calm',
-      image: '/lavender.png',
+      image: '/product image/200 Grams Agarbatti Jar/jar15.jpeg',
       color: '#F3EEFD'
     }
   ];
