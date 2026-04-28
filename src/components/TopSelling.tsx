@@ -9,8 +9,9 @@ const TopSelling: React.FC = () => {
 
   const getCategoryName = (id: string) => CATEGORIES.find(c => c.id === id)?.name || 'Unknown';
 
-  const handleInquiry = () => {
-    window.open('https://wa.me/919904957696', '_blank');
+  const handleInquiry = (productName: string) => {
+    const message = encodeURIComponent(`Hi, I'm interested in inquiring about ${productName}. Please provide more details.`);
+    window.open(`https://wa.me/919904957696?text=${message}`, '_blank');
   };
 
   return (
@@ -81,7 +82,7 @@ const TopSelling: React.FC = () => {
                 </div>
 
                 <button
-                  onClick={handleInquiry}
+                  onClick={() => handleInquiry(product.name)}
                   className="mt-5 w-full py-2.5 rounded-full bg-transparent border border-[#8b6f47] text-[#8b6f47] hover:bg-[#8b6f47] hover:text-white transition-all duration-300 font-semibold"
                 >
                   Inquiry Now →

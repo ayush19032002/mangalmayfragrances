@@ -79,7 +79,7 @@ const ProductList: React.FC = () => {
                   </div>
 
                   <a
-                    href="https://wa.me/919904957696"
+                    href={`https://wa.me/919904957696?text=${encodeURIComponent(`Hi, I'm interested in inquiring about ${product.name}. Please provide more details.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-5 inline-block w-[65%] py-2.5 rounded-full bg-transparent border border-[#8b6f47] text-[#8b6f47] hover:bg-[#8b6f47] hover:text-white transition-all duration-300 text-center no-underline text-sm font-semibold"
