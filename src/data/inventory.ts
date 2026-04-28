@@ -30,23 +30,23 @@ export const CATEGORIES: Category[] = [
 export const PRODUCTS: Product[] = [
   // ── 110 Grams Zipper Pouch ────────────────────────────────────────────────
   { id: 'p1', name: 'Exotica Heaven', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.50 PM.jpeg' },
-  { id: 'p2', name: 'Flower Bucket', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.50 PM (1).jpeg' },
+  { id: 'p2', name: 'Flower Bucket 4 In 1', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.50 PM (1).jpeg' },
   { id: 'p3', name: 'Gugal', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM.jpeg' },
-  { id: 'p4', name: 'Imperial Collection', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (1).jpeg' },
+  { id: 'p4', name: 'Imperial Collection 4 In 1', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (1).jpeg' },
   { id: 'p5', name: 'Keshar Essence', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (2).jpeg' },
-  { id: 'p6', name: 'Perfume Harmony', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (3).jpeg' },
+  { id: 'p6', name: 'Perfume Harmony 5 In 1', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (3).jpeg' },
   { id: 'p7', name: 'Prathna', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.34.51 PM (4).jpeg' },
   { id: 'p8', name: 'Sandal Wood', description: 'Premium  Incense Sticks', categoryId: 'pouch-110', price: 80, image: '/product image/110 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.35.37 PM.jpeg' },
 
   // ── 400 Grams Zipper Pouch ────────────────────────────────────────────────
-  { id: 'p9', name: 'Perfume Harmony', description: 'Premium  Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM.jpeg' },
-  { id: 'p10', name: 'Flower Bucket', description: 'Premium Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM (1).jpeg' },
-  { id: 'p11', name: 'Imperial Collection', description: 'Premium Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM (2).jpeg' },
+  { id: 'p9', name: 'Perfume Harmony 5 In 1', description: 'Premium  Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM.jpeg' },
+  { id: 'p10', name: 'Flower Bucket 4 In 1', description: 'Premium Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM (1).jpeg' },
+  { id: 'p11', name: 'Imperial Collection 4 In 1', description: 'Premium Incense Sticks', categoryId: 'pouch-400', price: 180, image: '/product image/400 Grams Zipper Pouch/WhatsApp Image 2026-04-27 at 12.37.56 PM (2).jpeg' },
 
   // ── 200 Grams Agarbatti Jar ───────────────────────────────────────────────
   { id: 'j1', name: 'Prathna', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar1.jpeg' },
-  { id: 'j2', name: 'Flower Bucket ', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar4.jpeg' },
-  { id: 'j3', name: 'Imperial Collection ', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar5.jpeg' },
+  { id: 'j2', name: 'Flower Bucket 4 In 1 ', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar4.jpeg' },
+  { id: 'j3', name: 'Imperial Collection 4 In 1', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar5.jpeg' },
   { id: 'j4', name: 'Exotica Heaven', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar6.jpeg' },
   { id: 'j5', name: 'Zamku', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar7.jpeg' },
   { id: 'j6', name: 'Loban', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar8.jpeg' },
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
   { id: 'j19', name: 'Oudh', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar21.jpeg' },
   { id: 'j20', name: 'Pandadi', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar22.jpeg' },
   { id: 'j21', name: 'Divine Parijat', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar23.jpeg' },
-  { id: 'j22', name: 'Perfume Harmony ', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar24.jpeg' },
+  { id: 'j22', name: 'Perfume Harmony 5 In 1 ', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar24.jpeg' },
   { id: 'j23', name: 'Ratrani', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar25.jpeg' },
   { id: 'j24', name: 'Rose', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar26.jpeg' },
   { id: 'j25', name: 'Divya Darshan', description: 'Premium Incense Sticks', categoryId: 'jar-200', price: 140, image: '/product image/200 Grams Agarbatti Jar/jar27.jpeg' },
