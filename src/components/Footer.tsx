@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-sm uppercase tracking-wider font-bold mb-10 text-black">The Collections</h4>
             <ul className="space-y-4 list-none p-0">
-              {['Zipper Packs', 'Deep Dhoop', 'Family Bundles', 'Royal Jars'].map(style => (
+              {['110 Grams Zipper Pouch', '400 Grams Zipper Pouch', '200 Grams Agarbatti Jar', '100 Grams Dhoop Sticks Jar'].map(style => (
                 <li key={style}>
                   <Link to="/products" className="text-black/55 hover:underline hover:underline-offset-2 transition-all no-underline font-body text-xs font-bold uppercase tracking-widest">
                     {style}
